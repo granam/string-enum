@@ -25,7 +25,7 @@ class StringEnumTest extends TestCase
     public function I_can_not_use_null()
     {
         $this->expectException(\Granam\StringEnum\Exceptions\WrongValueForStringEnum::class);
-        $this->expectExceptionMessageRegExp('~got NULL$~');
+        $this->expectExceptionMessageMatches('~got NULL$~');
         StringEnum::getEnum(null);
     }
 }

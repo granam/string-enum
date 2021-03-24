@@ -17,14 +17,10 @@ class StringEnumExceptionsHierarchyTest extends AbstractExceptionsHierarchyTest
         return \str_replace('\Tests', '', __NAMESPACE__);
     }
 
-    /**
-     * @return string
-     * @throws \ReflectionException
-     */
-    protected function getExternalRootNamespaces(): string
+    protected function getExternalRootNamespaces(): array
     {
         $reflection = new \ReflectionClass(ScalarEnum::class);
-        return $reflection->getNamespaceName();
+        return [$reflection->getNamespaceName()];
     }
 
 }
